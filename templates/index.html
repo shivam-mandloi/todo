@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-project</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}">
+</head>
+
+<body>
+    <div class="cont">
+
+        <div>
+        <div class="header">
+            <h1>ToDo</h1>
+        </div>
+            <a href="/logout" id="btn_log">logout</a>
+        </div>
+
+        <div class="box">
+            {% for item in data %}
+
+
+            <div class="list">
+                <div class="top">
+                    <a href="/delete/{{item.id}}" class="delete-btn"><img src="{{ url_for('static',filename='delete.png') }}"
+                            alt="delete"></a>
+                            <div class="container">
+                    <h1>{{item.title}}</h1>
+                </div>
+                    <li>date:-{{item.date}}</li>
+                </div>
+                <li>{{item.message}}</li>
+                <div class="btn">
+                        <a href="/update/{{item.id}}">update</a>
+                    {% if item.complete == 0 %}
+                        <a href="/complete/{{item.id}}">complete</a>
+                    {% endif %}
+                    {% if item.complete == 1 %}
+                        <a href="/complete/{{item.id}}" id="btn_complete">complete</a>
+                    {% endif %}
+                    
+                </div>
+            </div>
+
+            {% endfor %}
+
+            <a href="/add_todo" id="add">Add New</a>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

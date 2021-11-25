@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-project</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='otp.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+    <h1>Fill Otp</h1>
+    <p>Insert Otp which you get on your email.</p>
+</div>
+<form name="sentMessage" action="/otp-verification/{{email}}" method="POST">
+    <div class="inputs">
+        <input type="name" name="otp" id="Otp" placeholder="Otp">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>
+

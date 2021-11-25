@@ -1,0 +1,17 @@
+{
+    "params":
+    {
+        "title":"ToDo",
+       "mongo_address":"mongodb://localhost:27017/",
+       "database_name":"ToDo",
+       "email_id":"",
+       "email_password":"",
+       "msg_user_wrong_pas":"password is wrong",
+       "msg_user_wrong_username":"username is wrong",
+       "default_msg_email":"Enter your email",       
+       "db_name":"ToDo",
+       "db_host":"localhost",
+       "username_exist":"This username already exist",
+       "default_username_msg":"Fill your information"
+    }
+}
